@@ -179,3 +179,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// --Custom functions
+// Element wp_nav_menu
+function register_custom_nav_walker(){
+	require_once 'custom_walker_nav_menu.php';
+}
+add_action( 'after_setup_theme', 'register_custom_nav_walker' );

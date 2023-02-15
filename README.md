@@ -23,3 +23,16 @@ wp_enqueue_script( 'bootstrap-js' , get_template_directory_uri() . '/bootstrap/j
     </div>';
 // #Custom-logo
 ```
+
+## Custom menu
+![Progreso-header](/capturas/captura-menu_header.png)
+
+- Para poder emplear un menu personalizado se ha utilizado la clase `Walker_Nav_Menu`
+- Se ha creado el fichero `custom_walker_nav_menu.php` 
+- Se ha añadido las siguientes lineas en `functions.php`
+```
+function register_custom_nav_walker(){
+	require_once 'custom_walker_nav_menu.php';
+}
+add_action( 'after_setup_theme', 'register_custom_nav_walker' );
+```
